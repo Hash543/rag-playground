@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.env
+*.local
+
+# 資料檔案（避免大檔案進 repo）
+data/raw/
+data/processed/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
