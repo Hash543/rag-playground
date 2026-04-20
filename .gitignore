@@ -3,8 +3,8 @@ dist/
 .env
 *.local
 
-# 資料檔案（避免大檔案進 repo）
-data/raw/
+# 原始資料保留版控（ingest 輸入，方便重現）
+# 切塊後的產物可由 code 重建，不進 repo
 data/processed/
 
 # IDE
