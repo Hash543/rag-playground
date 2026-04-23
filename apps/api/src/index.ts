@@ -2,6 +2,7 @@ import Fastify from 'fastify'
 import cors from '@fastify/cors'
 import { config } from './config.js'
 import type { HealthResponse } from '@rag-playground/shared'
+import { chatRoutes } from './routes/chat.js'
 
 const app = Fastify({ logger: true })
 
@@ -11,6 +12,8 @@ await app.register(cors)
 app.get<{ Reply: HealthResponse }>('/health', async () => {
   return { status: 'ok', timestamp: new Date().toISOString() }
 })
+
+await app.register(chatRoutes)
 
 try {
   await app.listen({ port: config.port, host: '0.0.0.0' })

@@ -8,16 +8,23 @@
     "build": "tsc",
     "start": "node dist/index.js",
     "lint": "tsc --noEmit",
-    "ingest:chunk": "tsx src/ingest/run-chunk.ts"
+    "ingest:chunk": "tsx src/ingest/run-chunk.ts",
+    "ingest:embed": "tsx src/ingest/run-embed.ts",
+    "search": "tsx src/retrieval/run-search.ts",
+    "ask": "tsx src/chat/run-ask.ts"
   },
   "dependencies": {
     "@rag-playground/shared": "workspace:*",
+    "@anthropic-ai/sdk": "^0.88.0",
     "fastify": "^5.2.0",
-    "@fastify/cors": "^11.0.0"
+    "@fastify/cors": "^11.0.0",
+    "pg": "^8.13.0",
+    "pgvector": "^0.2.0"
   },
   "devDependencies": {
     "typescript": "^5.7.0",
     "tsx": "^4.19.0",
-    "@types/node": "^22.0.0"
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.0"
   }
 }

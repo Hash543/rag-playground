@@ -40,14 +40,14 @@ docker compose -f infra/docker-compose.yml up -d
 pnpm dev
 
 # 或分別啟動
-pnpm dev:api   # http://localhost:3000
-pnpm dev:web   # http://localhost:5173
+pnpm dev:api   # http://localhost:4100
+pnpm dev:web   # http://localhost:4300
 ```
 
 ### 驗證
 
-- API 健康檢查：`curl http://localhost:3000/health`
-- 前端：瀏覽器開啟 `http://localhost:5173`
+- API 健康檢查：`curl http://localhost:4100/health`
+- 前端：瀏覽器開啟 `http://localhost:4300`
 
 ## 專案結構
 

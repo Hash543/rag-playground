@@ -11,8 +11,8 @@ RAG 練習專案（pnpm monorepo）。MVP：Diablo 2 Resurrected 攻略助理。
 ```bash
 pnpm install              # 安裝所有 workspace 依賴
 pnpm dev                  # 同時啟動前後端 dev server
-pnpm dev:api              # 只啟動 Fastify (port 3000)
-pnpm dev:web              # 只啟動 Vite (port 5173)
+pnpm dev:api              # 只啟動 Fastify (port 4100)
+pnpm dev:web              # 只啟動 Vite (port 4300)
 pnpm build                # 全部 workspace build
 pnpm lint                 # 全部 workspace type-check
 pnpm -F api dev           # 指定 workspace 執行
@@ -22,7 +22,7 @@ docker compose -f infra/docker-compose.yml up -d   # 啟動 PostgreSQL + pgvecto
 ## Architecture
 
 - **apps/api** — Fastify + TypeScript 後端，使用 tsx 做 dev server
-- **apps/web** — Vue 3 + Vite + Pinia 前端，proxy `/api` → localhost:3000
+- **apps/web** — Vue 3 + Vite + Pinia 前端，proxy `/api` → localhost:4100
 - **packages/shared** — 共用 TypeScript 型別（ChatMessage, HealthResponse 等）
 - **infra/** — Docker Compose (Postgres 16 + pgvector), init.sql 建表
 - **data/** — raw (原始文件), processed (切塊 JSON), evalset (QA pairs)
